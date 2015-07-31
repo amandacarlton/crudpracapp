@@ -4,3 +4,6 @@ block content
 
  H1 What are people's favorite movies?
  a(href='/movies/new') Insert a new movie!
+ for item in info
+  a(href="/movies/"+ item._id)
+   p= item.title

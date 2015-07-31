@@ -1,0 +1,13 @@
+extends layout
+
+block content
+ h1 Edit your favorite movie
+ 
+ form(action="/movies/"+info._id+"/edit", method="post")
+  label(for="title") Title
+  input(type="text" id="title" name="title" value=info.title)
+  label(for="trailer") Trailer
+  input(type="text" id="trailer" name="trailer" value=info.url)
+  label(for="year") Year
+  input(type="number" id="year" name="year" value=info.year)
+  input(type="submit" value="Submit Movie")

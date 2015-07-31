@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= info.title
+  p 
+   Strong Release Year: 
+   =info.year
+  p
+   Strong Trailer: 
+  p
+   iframe(width='640', height='390', src=info.url, frameborder='0', allowfullscreen='')
+   
+  a(href="/movies/"+info._id+"/edit") Edit
+  
+  form(action="/movies/" + info._id + "/delete", method="post")
+   input(type="submit" value="delete")

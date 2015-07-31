@@ -3,11 +3,18 @@ extends layout
 block content
  h1 What is your favorite movie?
  
+ 
  form(action="/movies", method="post")
   label(for="title") Title
-  input(type="text" id="title" name="title")
+  input(type="text" id="title" name="title" value=title)
   label(for="trailer") Trailer
   input(type="text" id="trailer" name="trailer")
   label(for="year") Year
   input(type="number" id="year" name="year")
-  input(type="button" value="Submit Movie")
+  input(type="submit" value="Submit Movie")
+
+ if (errorlist)
+  div.red
+    ul 
+      for item in errorlist
+        li= item
